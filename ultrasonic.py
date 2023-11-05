@@ -36,9 +36,7 @@ ultraSonicSenorFront = UltrasonicSensor(INPUT_1)
 ultraSonicSenorBack = UltrasonicSensor(INPUT_2)
 modVehicleParameter = vehicleParameter.VehicleParameter()
 
-
 posUltraSonic = [0, -200, 0, 200, 0]
-
 
 class UltraSonic:
 

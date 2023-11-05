@@ -8,7 +8,7 @@ class VehicleParameter:
 
     # Parameter vom Fahrzeug in MM!
     # Raddurchmesser
-    diaWheel = 41
+    diaWheel = 39
     # Übersetzung
     gearing = 1
     # Breite von Mitte linkes Rad bis Mitte rechtes Rad

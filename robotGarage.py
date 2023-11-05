@@ -2,24 +2,11 @@
 
 from time import sleep
 from ev3dev2.motor import MoveDifferential, OUTPUT_B, OUTPUT_C, SpeedRPM
-from ev3dev2.port import LegoPort
-from ev3dev2.sensor import INPUT_3, INPUT_4
+from ev3dev2.sensor import INPUT_4
 from ev3dev2.sensor.lego import GyroSensor
-
 
 # import ultrasonic
 import vehicleParameter
-
-# Treiber für Sensoren laden
-# gs = GyroSensor
-gs = LegoPort(INPUT_4)
-gs.mode = "ev3-uart"
-gs.set_device = "lego-ev3-gyro"
-
-# ts = TouchSensor -(stopSensor)
-ts = LegoPort(INPUT_3)
-ts.mode = "ev3-analog"
-ts.set_device = "lego-ev3-touch"
 
 sleep(4)
 

@@ -12,7 +12,7 @@
 # MC = Large Motor Right
 # MD = Free
 
-import robotGarage
+# import robotGarage
 import gyroSensorTest
 import sysInfo
 import ultrasonic
@@ -32,11 +32,11 @@ modSysInfo.volt_brick_pi()
 # modRobotGarage.drive_out_garage()
 # modRobotGarage.drive_in_garage()
 
-
 # modUltraSonic.ultra_sonic_motor_scan()
 
-# modUltraSonic.motor_stop()
-
+#modUltraSonic.motor_stop()
 
 modGyroSensorTest = gyroSensorTest.GyroSensorTest()
 modGyroSensorTest.gyro_brickPi()
+
+

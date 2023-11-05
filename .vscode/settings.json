@@ -1,4 +1,6 @@
 {
     "python.analysis.autoImportCompletions": true,
-    "python.analysis.typeCheckingMode": "basic"
+    "python.analysis.typeCheckingMode": "basic",
+    "remote.SSH.defaultForwardedPorts": [],
+    "vsicons.associations.folderDefault.root_folder_light": null
 }
