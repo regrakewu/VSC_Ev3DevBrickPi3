@@ -22,7 +22,7 @@ import vehicleParameter
 modSysInfo = sysInfo.SystemInfo()
 modSysInfo.volt_brick_pi()
 
-# todo: Von Zeile 25 bis 38 ist auskommentiert! Nur für Testzwecke.
+#TODO: Von Zeile 25 bis 38 ist auskommentiert! Nur für Testzwecke.
 
 # modUltraSonic = ultrasonic.UltraSonic()
 
@@ -34,7 +34,6 @@ modSysInfo.volt_brick_pi()
 
 # modUltraSonic.ultra_sonic_motor_scan()
 
-#modUltraSonic.motor_stop()
 
 modGyroSensorTest = gyroSensorTest.GyroSensorTest()
 modGyroSensorTest.gyro_brickPi()

@@ -22,18 +22,21 @@ class RobotGarage:
     def drive_out_garage(self):
 
         tankMotorBC.odometry_start()
+        RobotGarage.gyro_reset(self)
         RobotGarage.test(self)
         tankMotorBC.on_to_coordinates(SpeedRPM(40), 0, 300)
         RobotGarage.test(self)
         tankMotorBC.on_to_coordinates(SpeedRPM(40), 300, 300)
         RobotGarage.test(self)
-        tankMotorBC.odometry_stop()
+        
 
     def drive_in_garage(self):
 
+        tankMotorBC.gyro = GyroSensor()
         tankMotorBC.on_to_coordinates(SpeedRPM(40), 0, 300)
         RobotGarage.test(self)
-        tankMotorBC.turn_to_angle(SpeedRPM(40), 90)
+        tankMotorBC.turn_degrees(speed=40, degrees=90, brake=True, block=True, error_margin=2, use_gyro=True)
+        # tankMotorBC.turn_to_angle(SpeedRPM(40), 90)
         RobotGarage.test(self)
         tankMotorBC.odometry_stop()
         tankMotorBC.on_for_distance(SpeedRPM(-40), 300)
