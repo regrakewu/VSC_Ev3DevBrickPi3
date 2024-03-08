@@ -8,7 +8,6 @@ positionSensor = GyroSensor(INPUT_4)
 #positionSensor.calibrate()
 tankMotorBC.gyro = positionSensor
 
-
 class CalcTrack:
 
     def track_straight_ahead(self, speedStraightAhead, track):

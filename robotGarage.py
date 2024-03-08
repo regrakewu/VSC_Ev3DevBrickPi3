@@ -19,6 +19,7 @@ tankMotorBC = MoveDifferential(
 
 
 class RobotGarage:
+    
     def drive_out_garage(self):
 
         tankMotorBC.odometry_start()

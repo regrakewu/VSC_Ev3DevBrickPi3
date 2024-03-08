@@ -2,7 +2,6 @@
 
 from ev3dev2.power import PowerSupply
 
-
 class SystemInfo:
 
     batteryPower = PowerSupply()
