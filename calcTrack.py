@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# todo: GyroSensor löschen und MoveTank in MoveDifferential ändern
+# TODO: GyroSensor löschen und MoveTank in MoveDifferential ändern
 from ev3dev2.motor import MoveTank, OUTPUT_B, OUTPUT_C
 from ev3dev2.sensor import INPUT_4
 from ev3dev2.sensor.lego import GyroSensor

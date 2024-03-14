@@ -16,4 +16,4 @@ class SystemInfo:
                   Der Brick schaltet sich gleich aus!''')
 
 
-# todo: Hier soll noch Sound eingebaut werden (subprocess)
+# TODO: Hier soll noch Sound eingebaut werden (subprocess)
