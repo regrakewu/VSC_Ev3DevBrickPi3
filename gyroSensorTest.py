@@ -34,9 +34,7 @@ class GyroSensorTest:
     
     def gyro_Angle(self):
         angel = tankMotorBC.gyro.angle
-        rate = tankMotorBC.gyro.rate
         print(angel)
-        print(rate)
      
       
         
