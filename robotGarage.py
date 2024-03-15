@@ -17,7 +17,6 @@ tankMotorBC = MoveDifferential(
     wheel_class=vehicleParameter.Ev3TireBrickPi,
     wheel_distance_mm=modVehicleParameter.wheelDistance)
 
-
 class RobotGarage:
     
     def drive_out_garage(self):

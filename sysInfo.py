@@ -15,5 +15,4 @@ class SystemInfo:
             print('''Die Leistung des Akkus ist in einem kritischen Bereich!'
                   Der Brick schaltet sich gleich aus!''')
 
-
 # TODO: Hier soll noch Sound eingebaut werden (subprocess)

@@ -12,6 +12,7 @@ tankMotorBC = MoveDifferential(OUTPUT_B, OUTPUT_C, wheel_class=vehicleParameter.
 class GyroSensorTest:
     
     def gyro_brickPi(self):
+        
 
         stopSensor = TouchSensor(INPUT_3)       
         tankMotorBC.odometry_start()  

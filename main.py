@@ -18,6 +18,7 @@ import sysInfo
 import ultrasonic
 import vehicleParameter
 
+
 # Batterieleistung ausgeben
 modSysInfo = sysInfo.SystemInfo()
 modSysInfo.volt_brick_pi()
