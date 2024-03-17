@@ -2,5 +2,8 @@
     "python.analysis.autoImportCompletions": true,
     "python.analysis.typeCheckingMode": "basic",
     "remote.SSH.defaultForwardedPorts": [],
-    "vsicons.associations.folderDefault.root_folder_light": {}
+    "vsicons.associations.folderDefault.root_folder_light": {},
+    "todo-tree.tree.showCountsInTree": false,
+    "todo-tree.tree.showBadges": false,
+    "todo-tree.tree.disableCompactFolders": true
 }

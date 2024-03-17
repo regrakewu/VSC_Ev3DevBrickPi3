@@ -6,6 +6,7 @@ from ev3dev2.sensor.lego import TouchSensor, GyroSensor
 from ev3dev2.motor import MoveDifferential, OUTPUT_B, OUTPUT_C, SpeedPercent
 import vehicleParameter
 
+
 tankMotorBC = MoveDifferential(OUTPUT_B, OUTPUT_C, wheel_class=vehicleParameter.Ev3TireBrickPi,
                                wheel_distance_mm=vehicleParameter.VehicleParameter.wheelDistance)
 
@@ -23,7 +24,7 @@ class GyroSensorTest:
             tankMotorBC.gyro = gyroSensor                
             tankMotorBC.on_for_distance(speed=SpeedPercent(20), distance_mm=100)         
             tankMotorBC.turn_degrees(speed=SpeedPercent(20), degrees=-90, brake=True, block=True, error_margin=2, use_gyro=False)
-            sleep(1)
+            # sleep(1)
             GyroSensorTest.gyro_Angle(self)        
             # tankMotorBC.turn_degrees(speed=SpeedPercent(30), degrees=90)
             # gyroTest = tankMotorBC.gyro.angle
@@ -35,7 +36,11 @@ class GyroSensorTest:
     
     def gyro_Angle(self):
         angel = tankMotorBC.gyro.angle
-        print(angel)
+        
+        if angel > 45:
+            print(angel, "Grad")
+        
+            
      
       
         
