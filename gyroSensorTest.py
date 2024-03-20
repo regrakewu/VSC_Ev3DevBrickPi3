@@ -14,32 +14,32 @@ class GyroSensorTest:
     
     def gyro_brickPi(self):
         
-
         stopSensor = TouchSensor(INPUT_3)       
         tankMotorBC.odometry_start()  
-        gyroSensor = GyroSensor()  
+        gyroSensor = GyroSensor()      
+        tankMotorBC.gyro = gyroSensor
         
         while not stopSensor.is_pressed:
-            
-            tankMotorBC.gyro = gyroSensor                
-            tankMotorBC.on_for_distance(speed=SpeedPercent(20), distance_mm=100)         
-            tankMotorBC.turn_degrees(speed=SpeedPercent(20), degrees=-90, brake=True, block=True, error_margin=2, use_gyro=False)
-            # sleep(1)
+                                   
+            tankMotorBC.on_for_distance(speed=SpeedPercent(20), distance_mm=100)  
+            tankMotorBC.turn_to_angle(speed=SpeedPercent(20), angle_target_degrees=90, brake=True, block=True, error_margin=2, use_gyro=True)  
+            # tankMotorBC.turn_degrees(speed=SpeedPercent(20), degrees=-45, brake=True, block=True, error_margin=2, use_gyro=False)
             GyroSensorTest.gyro_Angle(self)        
-            # tankMotorBC.turn_degrees(speed=SpeedPercent(30), degrees=90)
-            # gyroTest = tankMotorBC.gyro.angle
-            # print(gyroTest)
-
                 
         tankMotorBC.odometry_stop()         
         print("Program is stopped")
     
     def gyro_Angle(self):
         angel = tankMotorBC.gyro.angle
-        
+        """ tankMotorBC.stop()
+        gyroSensor.wait_until_angle_changed_by(90, direction_sensitive=False)
+        tankMotorBC.on_for_distance(speed=SpeedPercent(40), distance_mm=200)
+        tankMotorBC.stop() """
         if angel > 45:
+            tankMotorBC.stop()
             print(angel, "Grad")
-        
+            
+   
             
      
       
