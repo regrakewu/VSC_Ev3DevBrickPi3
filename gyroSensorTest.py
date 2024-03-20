@@ -22,7 +22,7 @@ class GyroSensorTest:
         while not stopSensor.is_pressed:
                                    
             tankMotorBC.on_for_distance(speed=SpeedPercent(20), distance_mm=100)  
-            tankMotorBC.turn_to_angle(speed=SpeedPercent(20), angle_target_degrees=90, brake=True, block=True, error_margin=2, use_gyro=True)  
+            tankMotorBC.turn_to_angle(speed=SpeedPercent(20), angle_target_degrees=45, brake=True, block=True, error_margin=2, use_gyro=True)  
             # tankMotorBC.turn_degrees(speed=SpeedPercent(20), degrees=-45, brake=True, block=True, error_margin=2, use_gyro=False)
             GyroSensorTest.gyro_Angle(self)        
                 
