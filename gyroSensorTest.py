@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 
 from time import sleep
+from turtle import tiltangle
 from ev3dev2.sensor import INPUT_3, INPUT_4
 from ev3dev2.sensor.lego import TouchSensor, GyroSensor
 from ev3dev2.motor import MoveDifferential, OUTPUT_B, OUTPUT_C, SpeedPercent
 import vehicleParameter
+import sys
 
 
 tankMotorBC = MoveDifferential(OUTPUT_B, OUTPUT_C, wheel_class=vehicleParameter.Ev3TireBrickPi,
@@ -16,30 +18,35 @@ class GyroSensorTest:
         
         stopSensor = TouchSensor(INPUT_3)       
         tankMotorBC.odometry_start()  
-        gyroSensor = GyroSensor()      
+        gyroSensor = GyroSensor() 
         tankMotorBC.gyro = gyroSensor
+     
+       
         
         while not stopSensor.is_pressed:
-                                   
-            tankMotorBC.on_for_distance(speed=SpeedPercent(20), distance_mm=100)  
-            tankMotorBC.turn_to_angle(speed=SpeedPercent(20), angle_target_degrees=45, brake=True, block=True, error_margin=2, use_gyro=True)  
-            # tankMotorBC.turn_degrees(speed=SpeedPercent(20), degrees=-45, brake=True, block=True, error_margin=2, use_gyro=False)
-            GyroSensorTest.gyro_Angle(self)        
-                
-        tankMotorBC.odometry_stop()         
+             
+                tankMotorBC.on_for_distance(speed=SpeedPercent(40), distance_mm=300)
+                sleep(1) 
+                tankMotorBC.turn_right(speed=SpeedPercent(20), degrees=90, brake=True, block=True, error_margin=2, use_gyro=True)
+                sleep(1)
+                GyroSensorTest.gyro_Angle(self)
+           
         print("Program is stopped")
     
     def gyro_Angle(self):
+        
         angel = tankMotorBC.gyro.angle
-        """ tankMotorBC.stop()
-        gyroSensor.wait_until_angle_changed_by(90, direction_sensitive=False)
-        tankMotorBC.on_for_distance(speed=SpeedPercent(40), distance_mm=200)
-        tankMotorBC.stop() """
-        if angel > 45:
-            tankMotorBC.stop()
-            print(angel, "Grad")
+        
+        if angel > 358:
             
-   
+            tankMotorBC.stop()  
+            angel = 0      
+            print(angel, "Grad")       
+            print("GyroSensor is reset")
+            print(angel, "Grad")
+            sys.exit()
+        
+        print(angel, "Grad")
             
      
       
