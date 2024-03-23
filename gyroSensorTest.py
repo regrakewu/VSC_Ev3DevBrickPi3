@@ -19,14 +19,17 @@ class GyroSensorTest:
         tankMotorBC.odometry_start()  
         gyroSensor = GyroSensor() 
         tankMotorBC.gyro = gyroSensor
-     
+        gyroReset = tankMotorBC.gyro.angle
+        gyroReset = 0
+        print(gyroReset, "Grad")
+      
        
         
         while not stopSensor.is_pressed:
              
-                tankMotorBC.on_for_distance(speed=SpeedPercent(40), distance_mm=300)
+                tankMotorBC.on_for_distance(speed=SpeedPercent(30), distance_mm=300)
                 sleep(1) 
-                tankMotorBC.turn_right(speed=SpeedPercent(20), degrees=90, brake=True, block=True, error_margin=2, use_gyro=True)
+                tankMotorBC.turn_degrees(speed=SpeedPercent(20), degrees=90, brake=True, block=True, error_margin=2, use_gyro=True)
                 sleep(1)
                 GyroSensorTest.gyro_Angle(self)
            

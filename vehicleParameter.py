@@ -18,7 +18,7 @@ class VehicleParameter:
     # Motorschritte bei einer Umdrehung
     motorDegrees = 360
     # Streckenkorrektur
-    routeError = 30
+    routeError = 5
 
     def __int__(self, diaWheel, gearing, trackWidth, wheelBase, motorMaxSpeed, wheelSpeed,
                 motorDegrees, routeError):
